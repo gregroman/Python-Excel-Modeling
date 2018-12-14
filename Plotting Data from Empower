@@ -1,0 +1,22 @@
+
+import numpy as np
+
+#define the data type
+mydat = np.dtype([('X',float),('Y',float)])
+
+#generates an array from the txt file:
+G = np.loadtxt("C:\\Users\\usgrom\\Desktop\\TEST1115.txt", skiprows=5, usecols=(0,1), dtype=mydat)
+
+#Graph X and Y from the imported file:
+import matplotlib.pyplot as plt
+
+G['X']
+G['Y']
+
+plt.plot(G['X'],(G['Y']), 'b')
+plt.legend(['CE'])
+plt.xlabel('time(min)')
+plt.ylabel('absorbance(mAU)')
+plt.show()
+
+
