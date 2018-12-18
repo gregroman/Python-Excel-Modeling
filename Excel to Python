@@ -1,1 +1,28 @@
+import numpy as np
+import pandas as pd
+
+#import model excel spreadsheet
+model = pd.read_excel('C:\\Users\\usgrom\\Desktop\\Sensor1.xlsx')
+print(model [0:3])
+
+#create a data frame from the model excel spreadsheet
+df=pd.DataFrame(model)
+
+#slicing a dataframe and creating the time variable
+time = df.iloc[0:100000,0:1]
+print(time)
+
+#slicing a dataframe and creating the dependent variable
+mag = df.iloc[0:100000,1:2]
+print(mag)
+
+#Graph time and magnitude
+import matplotlib.pyplot as plt
+
+plt.plot(time, mag, 'b')
+plt.legend(['CE'])
+plt.xlabel('time(min)')
+plt.ylabel('absorbance(mAU)')
+plt.show()
+
 
